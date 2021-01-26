@@ -1,4 +1,4 @@
-# TF Grid db client
+# TF Grid API client
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![NPM version](https://img.shields.io/npm/v/tfgrid-api-client.svg?style=flat)](https://npmjs.org/package/tfgrid-api-client)
