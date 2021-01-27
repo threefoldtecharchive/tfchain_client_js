@@ -72,6 +72,7 @@
   "Address": "AccountId",
   "LookupSource": "AccountId",
   "BalanceOf": "Balance",
-  "Public": "[u8;32]"
+  "Public": "[u8;32]",
+  "U16F16": "[u8; 4]"
 }
   
