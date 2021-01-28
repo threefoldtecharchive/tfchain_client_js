@@ -78,6 +78,14 @@ Fetches an entity from storage based on an ID.
 const entity = await client.getEntityByID(1)
 ```
 
+### **getEntities**
+
+Fetches all entities from storage.
+
+```js
+const entity = await client.getEntities()
+```
+
 ### **deleteEntity**
 
 Deletes the entity linked to the private key.
@@ -111,6 +119,14 @@ Fetches twin from storage based on an ID.
 
 ```js
 const twin = await client.getTwinByID(1)
+```
+
+### **getTwins**
+
+Fetches all twins from storage.
+
+```js
+const entity = await client.getTwins()
 ```
 
 ### **deleteTwin**
