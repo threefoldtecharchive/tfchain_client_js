@@ -78,12 +78,12 @@ Fetches an entity from storage based on an ID.
 const entity = await client.getEntityByID(1)
 ```
 
-### **getEntities**
+### **listEntities**
 
 Fetches all entities from storage.
 
 ```js
-const entity = await client.getEntities()
+const entity = await client.listEntities()
 ```
 
 ### **deleteEntity**
@@ -121,12 +121,12 @@ Fetches twin from storage based on an ID.
 const twin = await client.getTwinByID(1)
 ```
 
-### **getTwins**
+### **listTwins**
 
 Fetches all twins from storage.
 
 ```js
-const entity = await client.getTwins()
+const entity = await client.listTwins()
 ```
 
 ### **deleteTwin**
