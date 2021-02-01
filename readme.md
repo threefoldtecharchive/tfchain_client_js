@@ -191,6 +191,43 @@ Sign an entityID and twinID combination and returns a signed message.
 const signedMessage = await client.sign(entityID, twinID)
 ```
 
+### **vest**
+
+Vest an amount of tokens for a specific duration, if the tft price provided is equal to the real tft price. It unlocks the current and previous vesting months.
+
+locked, perBlock, startingBlock, tftPrice
+
+- locked: amount of tokens to lock
+- perBlock: amount of tokens that unlock every block (1 block = 6 seconds)
+- startingBlock: block number to start the vesting on
+- tftPrice: price of tft that will trigger unlock condition (decimal number eg: 0.50)
+- callback: optional callback
+
+example:
+
+```js
+// This call wont be blocking and will return the block where the tx is included
+const block = await client.vest(locked, perBlock, startingBlock, tftPrice, callback)
+console.log(`Transaction included in block with hash: ${block.toHex()}`)
+```
+
+### **getPrice**
+
+Fetches the TFT Price.
+
+```js
+const price = await client.getPrice()
+```
+
+### **getBalance**
+
+Fetches your account's balance.
+
+```js
+const balance = await client.getBalance()
+```
+
+
 ### Example callback function
 
 ```js

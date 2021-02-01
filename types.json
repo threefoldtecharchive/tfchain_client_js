@@ -73,6 +73,12 @@
   "LookupSource": "AccountId",
   "BalanceOf": "Balance",
   "Public": "[u8;32]",
-  "U16F16": "[u8; 4]"
+  "U16F16": "[u8; 4]",
+  "VestingInfo": {
+    "locked": "Balance",
+    "perBlock": "Balance",
+    "startingBlock": "BlockNumber",
+    "tft_price": "U16F16"
+  }
 }
   
