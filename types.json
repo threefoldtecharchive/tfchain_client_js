@@ -78,7 +78,8 @@
     "locked": "Balance",
     "perBlock": "Balance",
     "startingBlock": "BlockNumber",
-    "tft_price": "U16F16"
+    "tft_price": "U16F16",
+    "lastReleasedBlock": "BlockNumber"
   }
 }
   
