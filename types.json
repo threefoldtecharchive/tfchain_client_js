@@ -80,6 +80,10 @@
     "startingBlock": "BlockNumber",
     "tft_price": "U16F16",
     "lastReleasedBlock": "BlockNumber"
+  },
+  "StellarTransaction": {
+    "amount": "Balance",
+    "target": "AccountId"
   }
 }
   
