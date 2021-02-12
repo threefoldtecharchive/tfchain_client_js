@@ -252,7 +252,3 @@ await client.createEntity(name, countryID, cityID, (res) => {
   }
 })
 ```
-
-## License
-
-MIT
