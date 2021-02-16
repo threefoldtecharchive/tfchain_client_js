@@ -14,14 +14,12 @@
     "name": "Vec<u8>",
     "country_id": "u32",
     "city_id": "u32",
-    "address": "AccountId",
-    "pub_key": "Public"
+    "address": "AccountId"
   },
   "Twin": {
     "id": "u32",
-    "address": "AccountId",
-    "pub_key": "Public",
-    "entities": "Vec<EntityProof>"
+    "entities": "Vec<EntityProof>",
+    "address": "AccountId"
   },
   "EntityProof": {
     "entity_id": "u32",
@@ -30,11 +28,12 @@
   "Node": {
     "id": "u32",
     "farm_id": "u32",
-    "pub_key": "AccountId",
     "resources": "Resources",
     "location": "Location",
     "country_id": "u32",
-    "city_id": "u32"
+    "city_id": "u32",
+    "pub_key": "Public",
+    "address": "AccountId"
   },
   "Location": {
     "longitude": "Vec<u8>",
