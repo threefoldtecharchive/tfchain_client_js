@@ -2,7 +2,6 @@
   "Farm": {
     "id": "u32",
     "name": "Vec<u8>",
-    "entity_id": "u32",
     "twin_id": "u32",
     "pricing_policy_id": "u32",
     "certification_type": "CertificationType",
@@ -33,7 +32,7 @@
     "location": "Location",
     "country_id": "u32",
     "city_id": "u32",
-    "pub_key": "Public",
+    "pub_key": "Vec<u8>",
     "address": "AccountId"
   },
   "Location": {
