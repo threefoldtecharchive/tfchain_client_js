@@ -18,9 +18,9 @@
   },
   "Twin": {
     "id": "u32",
-    "entities": "Vec<EntityProof>",
     "address": "AccountId",
-    "ip": "Vec<u8>"
+    "ip": "Vec<u8>",
+    "entities": "Vec<EntityProof>"
   },
   "EntityProof": {
     "entity_id": "u32",
