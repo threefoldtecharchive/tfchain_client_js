@@ -33,7 +33,11 @@
     "country_id": "u32",
     "city_id": "u32",
     "pub_key": "Vec<u8>",
-    "address": "AccountId"
+    "address": "AccountId",
+    "role": "Role"
+  },
+  "Role": {
+    "_enum": ["Node", "Gateway"]
   },
   "Location": {
     "longitude": "Vec<u8>",
