@@ -79,8 +79,8 @@
     "disk_type": "u8",
     "size": "u32"
   },
-  "Address": "AccountId",
-  "LookupSource": "AccountId",
+  "Address": "MultiAddress",
+  "LookupSource": "MultiAddress",
   "BalanceOf": "Balance",
   "Public": "[u8;32]",
   "U16F16": "[u8; 4]",

@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@encointer/util": "^0.1.0",
-    "@polkadot/api": "^3.5.1",
+    "@polkadot/api": "^4.0.3",
     "bip39": "^3.0.3",
     "bn.js": "^5.1.3"
   },
