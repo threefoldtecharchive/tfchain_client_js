@@ -92,8 +92,8 @@
     "lastReleasedBlock": "BlockNumber"
   },
   "StellarTransaction": {
-    "amount": "Balance",
-    "target": "MultiAddress"
+    "block": "BlockNumber",
+    "signatures": "Vec<Vec<u8>>"
   }
 }
   
