@@ -108,7 +108,8 @@
     "workload": "Vec<u8>",
     "public_ips": "u32",
     "state": "ContractState",
-    "last_updated": "u64"
+    "last_updated": "u64",
+    "previous_nu_reported": "u64"
   },
   "ContractState": {
     "_enum": [
