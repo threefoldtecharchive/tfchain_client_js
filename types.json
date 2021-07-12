@@ -105,7 +105,8 @@
   "Contract": {
     "twin_id": "u32",
 	  "node_id": "AccountId",
-    "workload": "Vec<u8>",
+    "data": "Vec<u8>",
+    "deployment_hash": "Vec<u8>",
     "public_ips": "u32",
     "state": "ContractState",
     "last_updated": "u64",
@@ -119,6 +120,7 @@
   },
   "Consumption": {
     "contract_id": "u64",
+    "timestamp": "u64",
     "cru": "u64",
     "sru": "u64",
     "hru": "u64",
