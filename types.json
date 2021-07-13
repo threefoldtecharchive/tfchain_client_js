@@ -103,6 +103,7 @@
     "size": "u32"
   },
   "Contract": {
+    "version": "u32",
     "twin_id": "u32",
 	  "node_id": "AccountId",
     "data": "Vec<u8>",
