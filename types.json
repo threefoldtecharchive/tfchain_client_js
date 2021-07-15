@@ -93,10 +93,18 @@
     "version": "u32",
     "id": "u32",
     "name": "Vec<u8>",
-    "currency": "Vec<u8>",
+    "unit": "Unit",
     "su": "u32",
     "cu": "u32",
     "nu": "u32"
+  },
+  "Unit": {
+    "_enum": [
+      "Bytes",
+      "Kilobytes",
+      "Megabytes",
+      "Gigabytes"
+    ]
   },
   "VolumeType": {
     "disk_type": "u8",
@@ -118,7 +126,7 @@
   "ContractState": {
     "_enum": [
       "Created",
-      "Deployed",
+      "Deleted",
       "OutOfFunds"
     ]
   },
