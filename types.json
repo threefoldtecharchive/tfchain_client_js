@@ -96,7 +96,8 @@
     "unit": "Unit",
     "su": "u32",
     "cu": "u32",
-    "nu": "u32"
+    "nu": "u32",
+    "ipu": "u32"
   },
   "Unit": {
     "_enum": [
