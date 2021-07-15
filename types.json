@@ -118,7 +118,8 @@
   "ContractState": {
     "_enum": [
       "Created",
-      "Deployed"
+      "Deployed",
+      "OutOfFunds"
     ]
   },
   "Consumption": {
