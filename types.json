@@ -122,7 +122,8 @@
     "state": "ContractState",
     "last_updated": "u64",
     "previous_nu_reported": "u64",
-    "public_ips_list": "Vec<PublicIP>"
+    "public_ips_list": "Vec<PublicIP>",
+    "amount_unbilled": "u64"
   },
   "ContractState": {
     "_enum": [
