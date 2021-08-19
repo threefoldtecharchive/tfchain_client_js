@@ -87,11 +87,10 @@
     "version": "u32",
     "id": "u32",
     "name": "Vec<u8>",
-    "unit": "Unit",
-    "su": "policy",
-    "cu": "policy",
-    "nu": "policy",
-    "ipu": "policy",
+    "su": "Policy",
+    "cu": "Policy",
+    "nu": "Policy",
+    "ipu": "Policy",
     "foundation_account": "AccountId",
     "certified_sales_account": "AccountId"
   },
@@ -104,7 +103,8 @@
       "Bytes",
       "Kilobytes",
       "Megabytes",
-      "Gigabytes"
+      "Gigabytes",
+      "Terrabytes"
     ]
   },
   "NodeContract": {
