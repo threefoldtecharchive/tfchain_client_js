@@ -226,8 +226,19 @@ Fetches your account's balance.
 ```js
 const balance = await client.getBalance()
 ```
-
-
+### **tfStoreGet**
+Set a value in tf key-value store
+```js
+await client.tfStoreSet("name", "Ashraf", (res) => {
+  if (res instanceof Error) {
+    console.log(res)
+  }
+});
+```
+### **tfStoreGet**
+```js
+console.log(await client.tfStoreGet("name"))
+```
 ### Example callback function
 
 ```js
