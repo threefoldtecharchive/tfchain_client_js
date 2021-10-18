@@ -199,6 +199,7 @@
   "BalanceOf": "Balance",
   "Public": "[u8;32]",
   "U16F16": "[u8; 4]",
+  "BufferIndex": "u32",
   "VestingInfo": {
     "locked": "Balance",
     "perBlock": "Balance",
