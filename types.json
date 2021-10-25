@@ -236,5 +236,11 @@
     "signature": "Vec<u8>",
     "stellar_pubkey": "Vec<u8>"
   },
+  "Burn": {
+    "target": "AccountId",
+    "amount": "BalanceOf",
+    "block": "BlockNumber",
+    "message": "Vec<u8>"
+  },
   "AccountInfo": "AccountInfoWithProviders"
 }
