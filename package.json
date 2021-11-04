@@ -1,6 +1,6 @@
 {
   "name": "tfgrid-api-client",
-  "version": "0.1.1",
+  "version": "0.1.12",
   "description": "API client for the TF Grid",
   "main": "index.js",
   "scripts": {
@@ -9,10 +9,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "tfgrid-fixed-utils": "0.1.4",
+    "@encointer/util": "^0.3.2",
+    "@encointer/worker-api": "^0.3.2",
     "@polkadot/api": "^4.0.3",
     "bip39": "^3.0.3",
-    "bn.js": "^5.1.3"
+    "bn.js": "^5.1.3",
+    "ip-regex": "^4.3.0"
   },
   "devDependencies": {
     "standard": "^16.0.3"
