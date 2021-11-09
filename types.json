@@ -242,5 +242,8 @@
     "block": "BlockNumber",
     "message": "Vec<u8>"
   },
+  "ValueStruct": {
+    "value": "U16F16"
+  },
   "AccountInfo": "AccountInfoWithProviders"
 }
