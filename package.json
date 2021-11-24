@@ -9,8 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@encointer/util": "^0.3.2",
-    "@encointer/worker-api": "^0.3.2",
     "@polkadot/api": "^4.0.3",
     "bip39": "^3.0.3",
     "bn.js": "^5.1.3",
