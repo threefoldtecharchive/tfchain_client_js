@@ -100,7 +100,7 @@
     "foundation_account": "AccountId",
     "certified_sales_account": "AccountId"
   },
-  "Policy":{
+  "Policy": {
     "value": "u32",
     "unit": "Unit"
   },
@@ -127,7 +127,7 @@
     }
   },
   "NodeContract": {
-	  "node_id": "u32",
+    "node_id": "u32",
     "deployment_data": "Vec<u8>",
     "deployment_hash": "Vec<u8>",
     "public_ips": "u32",
@@ -142,9 +142,14 @@
     "amount_unbilled": "u64"
   },
   "ContractState": {
+    "_enum": {
+      "Created": null,
+      "Deleted": "Cause"
+    }
+  },
+  "Cause": {
     "_enum": [
-      "Created",
-      "Deleted",
+      "CanceledByUser",
       "OutOfFunds"
     ]
   },
