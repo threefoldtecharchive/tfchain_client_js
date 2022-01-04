@@ -262,5 +262,11 @@
   "AccountInfo": "AccountInfoWithProviders",
   "Keys": "SessionKeys2",
   "SessionKeys1": "(AccountId)",
-  "SessionKeys2": "(AccountId, AccountId)"
+  "SessionKeys2": "(AccountId, AccountId)",
+  "TermsAndConditions": {
+    "account_id": "AccountId",
+    "timestamp": "u64",
+    "document_link": "Vec<u8>",
+    "document_hash": "Vec<u8>"
+  }
 }
