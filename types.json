@@ -34,7 +34,7 @@
   },
   "NodeExtra": {
     "secure": "bool",
-    "virtualized", "bool",
+    "virtualized": "bool",
     "serial_number": "Vec<u8>"
   },
   "Node": {
