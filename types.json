@@ -158,7 +158,7 @@
   },
   "ContractResources": {
     "contract_id": "u64",
-    "used": "resources"
+    "used": "Resources"
   },
   "Cause": {
     "_enum": [
