@@ -156,6 +156,10 @@
       "Deleted": "Cause"
     }
   },
+  "ContractResources": {
+    "contract_id": "u64",
+    "used": "resources"
+  },
   "Cause": {
     "_enum": [
       "CanceledByUser",
