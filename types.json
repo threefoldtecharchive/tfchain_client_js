@@ -6,7 +6,8 @@
     "twin_id": "u32",
     "pricing_policy_id": "u32",
     "certification_type": "CertificationType",
-    "public_ips": "Vec<PublicIP>"
+    "public_ips": "Vec<PublicIP>",
+    "dedicated_farm": "bool"
   },
   "PublicIP": {
     "ip": "Vec<u8>",
@@ -103,7 +104,7 @@
     "domain_name": "Policy",
     "foundation_account": "AccountId",
     "certified_sales_account": "AccountId",
-    "discount_for_dedication_nodes": "u8"
+    "discount_for_dedicated_nodes": "u8"
   },
   "Policy": {
     "value": "u32",
@@ -301,5 +302,10 @@
       "Approved",
       "Validating"
     ]
+  },
+  "ContractLock": {
+    "amount_locked": "Balance",
+    "lock_updated": "u64",
+    "cycles": "u16"
   }
 }
