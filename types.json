@@ -154,7 +154,8 @@
   "ContractState": {
     "_enum": {
       "Created": null,
-      "Deleted": "Cause"
+      "Deleted": "Cause",
+      "GracePeriod": "u64"
     }
   },
   "ContractResources": {
