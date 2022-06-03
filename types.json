@@ -5,9 +5,18 @@
     "name": "Vec<u8>",
     "twin_id": "u32",
     "pricing_policy_id": "u32",
-    "certification_type": "CertificationType",
+    "certification": "FarmCertification",
     "public_ips": "Vec<PublicIP>",
-    "dedicated_farm": "bool"
+    "dedicated_farm": "bool",
+    "farming_policy_limits": "Option<FarmingPolicyLimit>"
+  },
+  "FarmingPolicyLimit": {
+    "farming_policy_id": "u32",
+    "cu": "Option<u64>",
+    "su": "Option<u64>",
+    "end": "Option<u64>",
+    "node_count": "Option<u32>",
+    "node_certification": "bool"
   },
   "PublicIP": {
     "ip": "Vec<u8>",
@@ -46,10 +55,11 @@
     "created": "u64",
     "farming_policy_id": "u32",
     "interfaces": "Vec<Interface>",
-    "certification_type": "CertificationType",
+    "certification": "NodeCertification",
     "secure_boot": "bool",
     "virtualized": "bool",
-    "serial_number": "Vec<u8>"
+    "serial_number": "Vec<u8>",
+    "connection_price": "u32"
   },
   "PublicConfig": {
     "ipv4": "Vec<u8>",
@@ -73,24 +83,17 @@
     "mac": "Vec<u8>",
     "ips": "Vec<Vec<u8>>"
   },
-  "CertificationType": {
+  "NodeCertification": {
     "_enum": [
       "Diy",
       "Certified"
     ]
   },
-  "CertificationCodeType": {
+  "FarmCertification": {
     "_enum": [
-      "Farm",
-      "Entity"
+      "NotCertified",
+      "Gold"
     ]
-  },
-  "CertificationCodes": {
-    "version": "u32",
-    "id": "u32",
-    "name": "Vec<u8>",
-    "description": "Vec<u8>",
-    "certification_code_type": "CertificationCodeType"
   },
   "PricingPolicy": {
     "version": "u32",
@@ -205,8 +208,13 @@
     "su": "u32",
     "nu": "u32",
     "ipv4": "u32",
-    "timestamp": "u64",
-    "certification_type": "CertificationType"
+    "minimal_uptime": "u16",
+    "policy_created": "BlockNumber",
+    "policy_end": "BlockNumber",
+    "immutable": "bool",
+    "default": "bool",
+    "node_certification": "NodeCertification",
+    "farm_certification": "Certification"
   },
   "ContractBill": {
     "contract_id": "u64",
