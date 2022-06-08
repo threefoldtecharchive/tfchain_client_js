@@ -316,5 +316,22 @@
     "amount_locked": "Balance",
     "lock_updated": "u64",
     "cycles": "u16"
+  },
+  "DaoProposal": {
+    "index": "u32",
+    "description": "Vec<u8>",
+    "link": "Vec<u8>"
+  },
+  "Votes": {
+    "index": "u32",
+    "threshold": "u32",
+    "ayes": "Vec<VoteWeight>",
+    "nayes": "Vec<VoteWeight>",
+    "end": "BlockNumber",
+    "vetos": "Vec<AccountId>"
+  },
+  "VoteWeight": {
+    "farm_id": "u32",
+    "weight": "u64"
   }
 }
