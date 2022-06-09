@@ -214,7 +214,7 @@
     "immutable": "bool",
     "default": "bool",
     "node_certification": "NodeCertification",
-    "farm_certification": "Certification"
+    "farm_certification": "FarmCertification"
   },
   "ContractBill": {
     "contract_id": "u64",
