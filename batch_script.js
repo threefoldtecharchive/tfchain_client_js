@@ -9,39 +9,31 @@ async function syncBatch() {
 		);
 
 		await cl.init();
-		console.log('cl.api.tx.utility', cl.api.tx.utility.batch);
-		console.log('client initialized');
-		const names = ['testvm2', 'testvm3', 'testvm4'];
+		const names = ['testvm8', 'testvm9', 'testvm10'];
 		const extrinsics = [];
-		console.log('typeof extrensics is', extrinsics);
 		for (const name of names) {
-			const createdContract = await cl
-				.createNameContract(name, (res) => {
-					if (res instanceof Error) {
-						console.log(res);
-					}
-					const { events, status } = res;
-
-					switch (status.type) {
-						case 'Ready':
-							console.log('done');
-					}
-					if (status.isFinalized) {
-						console.log('finalized');
-					} else {
-						events.forEach(({ phase, event: { data, method, section } }) => {
-							console.log(`\t' ${phase}: ${section}.${method}:: ${data}`);
-						});
-					}
-				})
-				.catch((err) => console.log(err.message));
-			console.log('createdContract', createdContract);
+			const createdContract = await cl.api.tx.smartContractModule.createNameContract(name)
 			extrinsics.push(createdContract);
-			console.log(`new contract with name ${name} pushed`);
 		}
 
-		const batchCreate = await cl.api.tx.utility.batch(extrinsics);
-		console.log('batchCreate', batchCreate);
+		const batchCreate = await cl.batch(extrinsics, (res) => {
+      if (res instanceof Error) {
+        console.log(res);
+      }
+      const { events, status } = res;
+      switch (status.type) {
+        case 'Ready':
+          console.log('done');
+      }
+      if (status.isFinalized) {
+        console.log('finalized');
+      } else {
+        events.forEach(({ phase, event: { data, method, section } }) => {
+          console.log(`\t' ${phase}: ${section}.${method}:: ${data}`);
+        });
+      }
+    })
+    .catch((err) => console.log(err.message))
 		console.log(`extrinsics are ${extrinsics}`, typeof extrinsics);
 	} catch (error) {
 		console.log(error);
