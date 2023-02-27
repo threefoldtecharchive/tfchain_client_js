@@ -15,22 +15,22 @@ npm install tfgrid-api-client
 
 Available methods:
 
-### **init** 
+### **init**
 
 inits the client and returns a promise
 
 ```js
-const Client = require('tfgrid-api-client')
+const Client = require("tfgrid-api-client");
 
-const url = "urlToWebsocket"
-const mnemonic = "some words"
+const url = "urlToWebsocket";
+const mnemonic = "some words";
 
-const client = new Client(url, mnemonic)
+const client = new Client(url, mnemonic);
 
 try {
-  await client.init()
+  await client.init();
 } catch (err) {
-  return err
+  return err;
 }
 ```
 
@@ -44,9 +44,9 @@ Creates an entity based on following information:
 - callback: optional callback
 
 ```js
-const name = 'foobar'
-const countryID = 1
-const cityID = 1
+const name = "foobar";
+const countryID = 1;
+const cityID = 1;
 ```
 
 ```js
@@ -77,7 +77,7 @@ console.log(`Transaction included in block with hash: ${block.toHex()}`)
 Fetches an entity from storage based on an ID.
 
 ```js
-const entity = await client.getEntityByID(1)
+const entity = await client.getEntityByID(1);
 ```
 
 ### **listEntities**
@@ -85,7 +85,7 @@ const entity = await client.getEntityByID(1)
 Fetches all entities from storage.
 
 ```js
-const entity = await client.listEntities()
+const entity = await client.listEntities();
 ```
 
 ### **deleteEntity**
@@ -100,16 +100,18 @@ await client.deleteEntity(callback: optional)
 
 Creates a twin based on following information:
 
-- peerID: Yggdrassil peer ID.
+- relay: a relay server address (optional)
+- pk: the public key of the twins encryption key (optional)
 - callback: optional callback
 
 ```js
-const peerID = '2a02:1812:1443:300:7913:de17:4c83:ecb2'
+const relay = "relay.dev.grid.tf" || null;
+const pk = "somepublickey" || null;
 ```
 
 ```js
 // This call wont be blocking and will return the block where the tx is included
-const block = await client.createTwin(peerID, callback: optional)
+const block = await client.createTwin(relay, pk, callback: optional)
 console.log(`Transaction included in block with hash: ${block.toHex()}`)
 ```
 
@@ -120,7 +122,7 @@ Note: A twin is by default anonymous, check addTwinEntity to add an entity to a 
 Fetches twin from storage based on an ID.
 
 ```js
-const twin = await client.getTwinByID(1)
+const twin = await client.getTwinByID(1);
 ```
 
 ### **listTwins**
@@ -128,7 +130,7 @@ const twin = await client.getTwinByID(1)
 Fetches all twins from storage.
 
 ```js
-const entity = await client.listTwins()
+const entity = await client.listTwins();
 ```
 
 ### **deleteTwin**
@@ -136,7 +138,7 @@ const entity = await client.listTwins()
 Deletes a twin from storage based on an ID. Only the creator of this twin can delete this twin.
 
 ```js
-await client.deleteTwin(1)
+await client.deleteTwin(1);
 ```
 
 ### **addTwinEntity**
@@ -148,20 +150,23 @@ Add an entity to a twin. The entity that is being added must sign a message comp
 - signature: signature signed by private key of entity
 - callback: optional callback
 
-
 example:
 
 ```js
-const entityID = 0
-const twinID = 0
+const entityID = 0;
+const twinID = 0;
 
 // the entity that owns this entity can sign this with his private key
-const signedMessage = await client.sign(entityID, twinID)
-
+const signedMessage = await client.sign(entityID, twinID);
 
 // This call wont be blocking and will return the block where the tx is included
-const block = await client.addTwinEntity(twinID, entityID, signedMessage, callback)
-console.log(`Transaction included in block with hash: ${block.toHex()}`)
+const block = await client.addTwinEntity(
+  twinID,
+  entityID,
+  signedMessage,
+  callback
+);
+console.log(`Transaction included in block with hash: ${block.toHex()}`);
 ```
 
 If the signature of the `signedMessage` is valid, this entity id will be added to this twin.
@@ -178,8 +183,8 @@ example:
 
 ```js
 // This call wont be blocking and will return the block where the tx is included
-const block = await client.removeTwinEntity(twinID, entityID, callback)
-console.log(`Transaction included in block with hash: ${block.toHex()}`)
+const block = await client.removeTwinEntity(twinID, entityID, callback);
+console.log(`Transaction included in block with hash: ${block.toHex()}`);
 ```
 
 ### **sign**
@@ -190,7 +195,7 @@ Sign an entityID and twinID combination and returns a signed message.
 - twinID: twin ID.
 
 ```js
-const signedMessage = await client.sign(entityID, twinID)
+const signedMessage = await client.sign(entityID, twinID);
 ```
 
 ### **vest**
@@ -209,8 +214,14 @@ example:
 
 ```js
 // This call wont be blocking and will return the block where the tx is included
-const block = await client.vest(locked, perBlock, startingBlock, tftPrice, callback)
-console.log(`Transaction included in block with hash: ${block.toHex()}`)
+const block = await client.vest(
+  locked,
+  perBlock,
+  startingBlock,
+  tftPrice,
+  callback
+);
+console.log(`Transaction included in block with hash: ${block.toHex()}`);
 ```
 
 ### **getPrice**
@@ -218,7 +229,7 @@ console.log(`Transaction included in block with hash: ${block.toHex()}`)
 Fetches the TFT Price.
 
 ```js
-const price = await client.getPrice()
+const price = await client.getPrice();
 ```
 
 ### **getBalance**
@@ -226,42 +237,48 @@ const price = await client.getPrice()
 Fetches your account's balance.
 
 ```js
-const balance = await client.getBalance()
+const balance = await client.getBalance();
 ```
+
 ### **tfStoreGet**
+
 Set a value in tf key-value store
+
 ```js
 await client.tfStoreSet("name", "Ashraf", (res) => {
   if (res instanceof Error) {
-    console.log(res)
+    console.log(res);
   }
 });
 ```
+
 ### **tfStoreGet**
+
 ```js
-console.log(await client.tfStoreGet("name"))
+console.log(await client.tfStoreGet("name"));
 ```
+
 ### Example callback function
 
 ```js
 // This call will block until status is Finalized and tx is included in a block and validated
 await client.createEntity(name, countryID, cityID, (res) => {
   if (res instanceof Error) {
-    console.log(res)
-    exit(1)
+    console.log(res);
+    exit(1);
   }
 
-  const { events = [], status } = res
-  console.log(`Current status is ${status.type}`)
+  const { events = [], status } = res;
+  console.log(`Current status is ${status.type}`);
 
   if (status.isFinalized) {
-    console.log(`Transaction included at blockHash ${status.asFinalized}`)
+    console.log(`Transaction included at blockHash ${status.asFinalized}`);
 
     // Loop through Vec<EventRecord> to display all events
     events.forEach(({ phase, event: { data, method, section } }) => {
-      console.log(`\t' ${phase}: ${section}.${method}:: ${data}`)
-    })
-    exit(1)
+      console.log(`\t' ${phase}: ${section}.${method}:: ${data}`);
+    });
+    exit(1);
   }
-})
+});
 ```
